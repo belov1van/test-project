@@ -1,2 +1,4 @@
-#!/usr/bin/env node. 
-console.log('Choos the game');
+#!/usr/bin/env node
+import { getUserName } from "../src/games/menu-game.js";
+
+getUserName();
