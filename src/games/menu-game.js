@@ -1,9 +1,20 @@
-#!/usr/bin/env node. 
-import readlineSync from 'readline-sync'
-console.log('Welcome to the brain games');
-export function getUserName() {
-  // Use the `question` function to prompt the user for input
-  const name = readlineSync.question("What is your name? ")
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import playScmGame from './brain-scm.js';
+import playProgressionGame from './brain-progression.js';
 
-  console.log("Hello, " + name + "!");
+export default function chooseGame() {
+  console.log('Game 1 is SCM game, game 2 is Progression game');
+  const choice = readlineSync.question('Enter the number of the game: ');
+
+  switch (choice) {
+    case '1':
+      playScmGame();
+      break;
+    case '2':
+      playProgressionGame();
+      break;
+    default:
+      console.log('Invalid choice. Please enter a number between 1 and 2.');
+  }
 }
